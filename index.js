@@ -71,7 +71,7 @@ class Contenedor {
   }
 }
 
-const nico = async () => {
+/*const ejecutarProductos = async () => {
   const productos = new Contenedor('productos.txt');
   await productos.save({title: 'Cif Antigrasa', price: 28.86, thumbnail: 'random_string'});
   console.log(productos.getAll());
@@ -80,14 +80,16 @@ const nico = async () => {
   //console.log(await productos.getById(2))
   //console.log(await productos.deleteAll())
   //console.log(await productos.deleteById(2))
-}
+}*/
+
+const productos = new Contenedor('productos.txt');
 
 app.get('/productos', (req, res, next) => {
-    res.send(nico);
+    res.send(productos.getAll());
   });
   
   app.get('/productoRamdom', (req, res, next) => {
-    res.send({hola: 'chau'});
+    res.send();
   });
   
   app.listen(8080, () => {
