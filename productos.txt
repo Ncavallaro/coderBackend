@@ -1,1 +1,20 @@
-[{"title":"Cif Antigrasa","price":28.86,"thumbnail":"random_string","id":1}]
+[
+    {
+        "title":"Producto 1",
+        "price":28.86,
+        "thumbnail":"random_string",
+        "id":1
+    },
+    {
+        "title":"Producto 2",
+        "price":99.99,
+        "thumbnail":"random_string",
+        "id":2
+    },
+    {
+        "title":"Producto 3",
+        "price":36.78,
+        "thumbnail":"random_string",
+        "id":3
+    }
+]

@@ -71,25 +71,23 @@ class Contenedor {
   }
 }
 
-/*const ejecutarProductos = async () => {
-  const productos = new Contenedor('productos.txt');
-  await productos.save({title: 'Cif Antigrasa', price: 28.86, thumbnail: 'random_string'});
-  console.log(productos.getAll());
-  return await productos.getAll();
-  //console.log(await productos.getAll());
-  //console.log(await productos.getById(2))
-  //console.log(await productos.deleteAll())
-  //console.log(await productos.deleteById(2))
-}*/
+const productosTxt = new Contenedor('productos.txt');
 
-const productos = new Contenedor('productos.txt');
-
-app.get('/productos', (req, res, next) => {
-    res.send(productos.getAll());
+app.get('/productos', (req, res) => {
+    const getProducts = async () => {
+      const products = await productosTxt.getAll();
+      res.send(products);
+    };
+    getProducts();
   });
   
-  app.get('/productoRamdom', (req, res, next) => {
-    res.send();
+  app.get('/productoRamdom', (req, res, ) => {
+    const getProducts = async () => {
+      const products = await productosTxt.getAll();
+      const numberRandom = Math.floor((Math.random() * (products.length)));
+      res.send(products[numberRandom]);
+    };
+    getProducts();
   });
   
   app.listen(8080, () => {
